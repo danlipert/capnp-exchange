@@ -11,7 +11,8 @@ class AccountServer(account_capnp.Accounts.Server):
     def createAccount(self, **kwargs):
         print("creating account")
         rand_id = secrets.token_bytes(32)
-        new_account = account_capnp.Accounts.Account.new_message(id=rand_id, balance=kwargs['initialBalance'])
+        new_account = account_capnp.Accounts.Account.new_message(
+            id=rand_id, balance=kwargs['initialBalance'])
         accounts[new_account.id.hex()] = new_account
         return new_account
 

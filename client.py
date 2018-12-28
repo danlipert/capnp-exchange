@@ -17,7 +17,8 @@ def delete_account(account_id):
     accounts.deleteAccount(account_id.hex()).wait()
 
 def transfer_funds(source_account_id, destination_account_id, funds_amount_id):
-    accounts.transferFunds(source_account_id, destination_account_id, funds_amount_id)
+    accounts.transferFunds(source_account_id, destination_account_id,
+                           funds_amount_id)
 
 for i in range(1, 10):
     account = create_account(i)
